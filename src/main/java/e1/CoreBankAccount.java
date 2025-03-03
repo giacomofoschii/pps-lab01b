@@ -4,7 +4,11 @@ import e1.API.BankAccount;
 
 public class CoreBankAccount implements BankAccount {
 
-    private int balance = 0;
+    private int balance;
+
+    public CoreBankAccount() {
+        this.balance = 0;
+    }
 
     @Override
     public int getBalance() {
