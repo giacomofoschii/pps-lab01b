@@ -15,18 +15,12 @@ public class SilverBankAccountTest extends AbstractBankAccountTest{
 
     @BeforeEach
     void init() {
-        createBankAccount();
-    }
-
-    @Override
-    protected BankAccount createBankAccount() {
-        return this.account = new BankAccountFactoryImpl().createSilverBankAccount();
+        this.account = new BankAccountFactoryImpl().createSilverBankAccount();
     }
 
     @Test
     void testCanWithdraw() {
-        this.account.deposit(INITIAL_DEPOSIT);
-        this.account.withdraw(FIRST_WITHDRAW);
+        depositAndWithdraw(INITIAL_DEPOSIT, FIRST_WITHDRAW);
         assertEquals(EXPECTED_BALANCE, this.account.getBalance());
     }
 

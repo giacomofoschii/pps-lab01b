@@ -12,12 +12,10 @@ public abstract class AbstractBankAccountTest {
 
     protected BankAccount account;
 
-    @BeforeEach
-    void init() {
-        this.account = createBankAccount();
+    protected void depositAndWithdraw(final int deposit, final int withdraw) {
+        this.account.deposit(deposit);
+        this.account.withdraw(withdraw);
     }
-
-    protected abstract BankAccount createBankAccount();
 
     @Test
     public void testInitiallyEmpty() {
