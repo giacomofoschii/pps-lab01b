@@ -6,7 +6,7 @@ public class FeeDecorator extends DecoratorBankAccount {
 
     private final int fee;
 
-    public FeeDecorator(final BankAccount account, final int fee) {
+    public FeeDecorator(final int fee, final BankAccount account) {
         super(account);
         this.fee = fee;
     }

@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BankAccountTest {
     public static final int EMPTY_BALANCE = 0;
-    public static final int SILVER_FEE = 1;
     public static final int INITIAL_DEPOSIT = 1000;
     public static final int FIRST_WITHDRAW = 200;
     public static final int SECOND_WITHDRAW = 1200;
@@ -18,7 +17,7 @@ public class BankAccountTest {
 
     @BeforeEach
     void init() {
-        this.account = new BankAccountFactoryImpl().createSilverBankAccount(SILVER_FEE);
+        this.account = new BankAccountFactoryImpl().createSilverBankAccount();
     }
 
     @Test
