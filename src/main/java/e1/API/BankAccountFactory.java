@@ -3,9 +3,16 @@ package e1.API;
 public interface BankAccountFactory {
 
     /**
-     * Creates a SilverBankAccount with the relative fee
+     * Creates a SilverBankAccount
      *
-     * @return the SilverBankAccount
+     * @return the BankAccount
      */
     BankAccount createSilverBankAccount();
+
+    /**
+     * Creates a GoldBankAccount
+     *
+     * @return the BankAccount
+     */
+    BankAccount createGoldBankAccount();
 }
