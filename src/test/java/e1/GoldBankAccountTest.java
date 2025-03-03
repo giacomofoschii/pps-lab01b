@@ -1,6 +1,5 @@
 package e1;
 
-import e1.API.BankAccount;
 import e1.factory.BankAccountFactoryImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

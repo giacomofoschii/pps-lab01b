@@ -15,4 +15,11 @@ public interface BankAccountFactory {
      * @return the BankAccount
      */
     BankAccount createGoldBankAccount();
+
+    /**
+     * Creates a BronzeBankAccount
+     *
+     * @return the BankAccount
+     */
+    BankAccount createBronzeBankAccount();
 }

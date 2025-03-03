@@ -2,10 +2,10 @@ package e1.decorator;
 
 import e1.API.BankAccount;
 
-public class CanWithdrawDecorator extends DecoratorBankAccount {
+public class WithdrawOverdraftDecorator extends DecoratorBankAccount {
     private final int overdraft;
 
-    public CanWithdrawDecorator(final int overdraft, BankAccount account) {
+    public WithdrawOverdraftDecorator(final int overdraft, BankAccount account) {
         super(account);
         this.overdraft = overdraft;
     }

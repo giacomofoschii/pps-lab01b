@@ -2,11 +2,11 @@ package e1.decorator;
 
 import e1.API.BankAccount;
 
-public class FeeDecorator extends DecoratorBankAccount {
+public class MandatoryFeeDecorator extends DecoratorBankAccount {
 
     private final int fee;
 
-    public FeeDecorator(final int fee, final BankAccount account) {
+    public MandatoryFeeDecorator(final int fee, final BankAccount account) {
         super(account);
         this.fee = fee;
     }
