@@ -14,24 +14,24 @@ public class BankAccountFactoryImpl implements BankAccountFactory {
 
     @Override
     public BankAccount createSilverBankAccount() {
-        return new MandatoryFeeDecorator(SILVER_FEE,
-                new WithdrawOverdraftDecorator(
-                        NO_OVERDRAFT, new DecoratorBankAccount(
+        return new WithdrawOverdraftDecorator(NO_OVERDRAFT,
+                new MandatoryFeeDecorator(SILVER_FEE,
+                        new DecoratorBankAccount(
                                 new CoreBankAccount())));
     }
 
     @Override
     public BankAccount createGoldBankAccount() {
-        return new MandatoryFeeDecorator(GOLD_FEE,
-                new WithdrawOverdraftDecorator(GOLD_OVERDRAFT,
+        return new WithdrawOverdraftDecorator(GOLD_OVERDRAFT,
+                new MandatoryFeeDecorator(GOLD_FEE,
                         new DecoratorBankAccount(
                                 new CoreBankAccount())));
     }
 
     @Override
     public BankAccount createBronzeBankAccount() {
-        return new ConditionalFeeDecorator(BRONZE_FEE, BRONZE_BUDGET_CAP,
-                new WithdrawOverdraftDecorator(NO_OVERDRAFT,
+        return new WithdrawOverdraftDecorator(NO_OVERDRAFT,
+                new ConditionalFeeDecorator(BRONZE_FEE, BRONZE_BUDGET_CAP,
                         new DecoratorBankAccount(
                                 new CoreBankAccount())));
     }

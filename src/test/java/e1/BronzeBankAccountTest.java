@@ -19,11 +19,15 @@ public class BronzeBankAccountTest extends AbstractBankAccountTest {
     }
 
     @Test
-    void testConditionalFeeWithdraw() {
+    void testWithdrawUnderFeeBudgetCap() {
         depositAndWithdraw(INITIAL_DEPOSIT, FIRST_WITHDRAW);
         assertEquals(EXPECTED_BALANCE, this.account.getBalance());
-        this.account.withdraw(SECOND_WITHDRAW);
-        assertEquals(EXPECTED_BALANCE - SECOND_WITHDRAW, this.account.getBalance());
+    }
+
+    @Test
+    void testWithdrawOverFeeBudgetCap() {
+        depositAndWithdraw(INITIAL_DEPOSIT, SECOND_WITHDRAW);
+        assertEquals(INITIAL_DEPOSIT - SECOND_WITHDRAW, this.account.getBalance());
     }
 
     @Test
